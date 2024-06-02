@@ -1,9 +1,8 @@
 class Solution {
 public:
     void reverseString(vector<char>& s) {
-        int n = s.size();
         int start = 0;
-        int end = n-1;
+        int end = s.size()-1;
         char ch;
         while(start<end){
             ch = s[start];
