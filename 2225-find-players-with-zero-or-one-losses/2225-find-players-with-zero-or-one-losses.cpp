@@ -2,8 +2,8 @@ class Solution {
 public:
     vector<vector<int>> findWinners(vector<vector<int>>& matches) {
         int n = matches.size();
-        map<int,int> inDegree;
-        map<int, int> outDegree;
+        unordered_map<int, int> inDegree;
+        unordered_map<int, int> outDegree;
         for(int i = 0; i<n; i++){
             inDegree[matches[i][1]]++;
             outDegree[matches[i][0]]++;
@@ -21,6 +21,8 @@ public:
                 lost_1.push_back(it.first);
             }
         }
+        std::sort(lost_0.begin(), lost_0.end());
+        std::sort(lost_1.begin(), lost_1.end());
         return {lost_0,lost_1};
         
     }
