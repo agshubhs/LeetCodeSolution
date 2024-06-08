@@ -7,16 +7,13 @@ public:
             return true;
         if(n<2)
             return false;
-        
         unordered_map<int, int> rem;
         rem[0] = -1;
         for(int i = 0 ;i<n;i++){
-            sum  += nums[i];
-            sum  %= k;
+            sum = (sum+nums[i]) % k ; 
             if(rem.find(sum) != rem.end()){
                 if(rem[sum] +1 < i)
                     return true;
-
             }
             else{
                 rem[sum] = i;
