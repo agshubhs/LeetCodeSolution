@@ -15,11 +15,9 @@ public:
             if(rem.find(sum) != rem.end()){
                 if(rem[sum] +1 < i)
                     return true;
-
             }
-            else{
-                rem[sum] = i;
-            }        
+            else
+                rem[sum] = i;      
     }
     return false;
     }
