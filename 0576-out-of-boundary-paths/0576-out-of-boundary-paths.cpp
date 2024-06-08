@@ -13,13 +13,14 @@ public:
     }
 
     long dfs(int i, int j,int move,vector<vector<vector<long>>> & memo){
-    if(move<0)
+    if(move<0 )
         return 0;
     if(i < 0 || i>=M || j< 0 ||j >=N )
             return 1;
     
     if(memo[i][j][move] != -1)
         return memo[i][j][move];
+    if(move <= i && move <= j && move + i < M && move + j < N) return 0;
     long total = 0;
     long a = dfs(i+1,j,move-1, memo);
     long b = dfs(i-1,j,move-1,memo);
