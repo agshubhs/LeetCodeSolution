@@ -21,12 +21,12 @@ public:
     if(memo[i][j][move] != -1)
         return memo[i][j][move];
     if(move <= i && move <= j && move + i < M && move + j < N) return 0;
+
     long total = 0;
-    long a = dfs(i+1,j,move-1, memo);
-    long b = dfs(i-1,j,move-1,memo);
-    long c = dfs(i,j+1,move-1,memo);
-    long d = dfs(i,j-1,move-1,memo);
-    total = (a+b+c+d)%MOD;
+    total  = (total+ dfs(i+1,j,move-1, memo))%MOD;
+    total = (total+ dfs(i-1,j,move-1,memo))%MOD;
+    total = (total+ dfs(i,j+1,move-1,memo))%MOD;
+    total = (total+ dfs(i,j-1,move-1,memo))%MOD;
     memo[i][j][move] = total % MOD;
     return total;
    }
