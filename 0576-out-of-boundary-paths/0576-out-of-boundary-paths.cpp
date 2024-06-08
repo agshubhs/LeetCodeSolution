@@ -25,7 +25,7 @@ public:
     
 
     int total = 0;
-    total  = (total+ dfs(i+1,j,move-1, memo))%MOD;
+    total  =(total+ dfs(i+1,j,move-1, memo))%MOD;
     total = (total+ dfs(i-1,j,move-1,memo))%MOD;
     total = (total+ dfs(i,j+1,move-1,memo))%MOD;
     total = (total+ dfs(i,j-1,move-1,memo))%MOD;
