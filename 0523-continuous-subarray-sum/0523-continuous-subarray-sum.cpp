@@ -10,10 +10,12 @@ public:
         unordered_map<int, int> rem;
         rem[0] = -1;
         for(int i = 0 ;i<n;i++){
-            sum = (sum+nums[i]) % k ; 
+            sum  += nums[i];
+            sum  %= k;
             if(rem.find(sum) != rem.end()){
                 if(i- rem[sum] > 1)
                     return true;
+
             }
             else{
                 rem[sum] = i;
