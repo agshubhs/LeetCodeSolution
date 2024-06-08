@@ -18,9 +18,11 @@ public:
     if(i < 0 || i>=M || j< 0 ||j >=N )
             return 1;
     
+    if(move <= i && move <= j && move + i < M && move + j < N) return 0;
+    
     if(memo[i][j][move] != -1)
         return memo[i][j][move];
-    if(move <= i && move <= j && move + i < M && move + j < N) return 0;
+    
 
     long total = 0;
     total  = (total+ dfs(i+1,j,move-1, memo))%MOD;
