@@ -12,7 +12,7 @@ public:
         for(int i = 0 ;i<n;i++){
             sum = (sum+nums[i]) % k ; 
             if(rem.find(sum) != rem.end()){
-                if(rem[sum] +1 < i)
+                if(i- rem[sum] > 1)
                     return true;
             }
             else{
