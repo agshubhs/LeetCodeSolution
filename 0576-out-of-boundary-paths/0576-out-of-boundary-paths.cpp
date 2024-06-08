@@ -13,7 +13,7 @@ public:
     }
 
     int dfs(int i, int j,int move,vector<vector<vector<long>>> & memo){
-    if(move<0 )
+    if(move<0)
         return 0;
     if(i < 0 || i>=M || j< 0 ||j >=N )
             return 1;
@@ -24,7 +24,7 @@ public:
         return memo[i][j][move];
     
 
-int total = 0;
+    int total = 0;
     total  = (total+ dfs(i+1,j,move-1, memo))%MOD;
     total = (total+ dfs(i-1,j,move-1,memo))%MOD;
     total = (total+ dfs(i,j+1,move-1,memo))%MOD;
