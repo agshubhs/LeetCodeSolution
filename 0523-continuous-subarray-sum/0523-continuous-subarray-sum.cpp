@@ -13,7 +13,7 @@ public:
             sum  += nums[i];
             sum  %= k;
             if(rem.find(sum) != rem.end()){
-                if(i- rem[sum] > 1)
+                if(rem[sum] +1 < i)
                     return true;
 
             }
